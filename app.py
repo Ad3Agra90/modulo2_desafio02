@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_templates
+from flask import Flask, request, jsonify, render_template
 import sqlite3
 
 app = Flask(__name__)
@@ -21,7 +21,7 @@ init_db()
 
 @app.route('/')
 def homepage():
-    return '<h2>Bem-vindos a API de livros VAI NA WEB!!!</h2>'
+    return render_template('index.html')
 
 
 @app.route('/doar', methods=['POST'])
